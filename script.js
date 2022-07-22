@@ -1,7 +1,7 @@
  //password text generator 
+ var passwordText = document.querySelector("#password");
  function writePassword() {
    var password = generatePassword();
-   var passwordText = document.querySelector("#password");
 
 
    passwordText.innerHTML = password;
@@ -41,10 +41,10 @@
    //finalArray = finalArray.split("")
    console.log(finalArray)
    for (let index = 0; index < length; index++) {
-     var newCharacter
+     var newCharacter = []
      newCharacter = finalArray[Math.floor(Math.random() * finalArray.length)]
      finalCharacters.push(newCharacter)
-     console.log(finalCharacters)
+     //console.log(finalCharacters)
    }
 
    //return password
@@ -89,36 +89,37 @@
    // includes lowercase
    if (document.getElementById("lower").checked) {
      console.log("user wants lowercase letters");
-     finalCharacters.push("a");
+     finalCharacters.push("");
    }
 
    //includes uppercase letters 
    if (document.getElementById("upper").checked) {
      console.log("user wants upperscase letters");
-     finalCharacters.push("A");
+     finalCharacters.push("");
    }
 
    //includes special characters
    if (document.getElementById("special").checked) {
      console.log("user wants special characters");
-     finalCharacters.push("!");
+     finalCharacters.push("F");
    }
 
    //includes numbers
    if (document.getElementById("numbers").checked) {
      console.log("user wants numeric characters");
-     finalCharacters.push("0");
+     finalCharacters.push("");
    }
    //finalCharacters.push("a");
    //finalCharacters.push("8");
    //console.log(passCharacters)
    //console.log(finalCharacters);
    //console.log(generatePassword);
-   //console.log(password);
+   console.log(password);
    //return password
    //for every character set selected add 1 item from that set immediately to the password and push the entire set to the array.
    //for loop added
    //password();
-   return password
+   passwordText.value = finalCharacters
+   //return password
 
  }
