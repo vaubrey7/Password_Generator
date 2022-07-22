@@ -101,7 +101,7 @@
    //includes special characters
    if (document.getElementById("special").checked) {
      console.log("user wants special characters");
-     finalCharacters.push("F");
+     finalCharacters.push("");
    }
 
    //includes numbers
