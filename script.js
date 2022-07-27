@@ -37,18 +37,19 @@ var includesNumbers;
    if (length < 8 || length > 128) {
      alert(" Invalid, must be between 8-128 Characters");
    }
+  var finalArray = []
    //var password = ""
 if(includesLowerCase === true ){
-  var finalArray = [...lowercaseArray]
+   finalArray = finalArray.concat(lowercaseArray)
 }
 if(includesNumbers === true){
-  finalArray = [finalArray, ...numbersArray]
+  finalArray = finalArray.concat(numbersArray)
 }
 if(includesSpecialCharacters === true){
-  finalArray = [finalArray, ...specialcharactersArray]
+  finalArray = finalArray.concat(specialcharactersArray)
 }
 if(includesUpperCase === true){
-  finalArray = [finalArray, ...uppercaseArray]
+  finalArray = finalArray.concat(uppercaseArray)
 }
    //finalArray = finalArray.split("")
    console.log(finalArray)
@@ -131,7 +132,9 @@ if(includesUpperCase === true){
    //for every character set selected add 1 item from that set immediately to the password and push the entire set to the array.
    //for loop added
    //password();
-   passwordText.value = finalCharacters
+   
+   passwordText.value = finalCharacters.join("")
+   
    //return password
 
  }
