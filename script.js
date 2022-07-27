@@ -16,11 +16,13 @@
  var specialcharactersArray = specialcharacters.split("");
  var numbers = "0123456789";
  var numbersArray = numbers.split("");
- console.log(lowercase);
- console.log(lowercaseArray);
+
 
  let finalCharacters = []
-
+var includesLowerCase;
+var includesUpperCase;
+var includesSpecialCharacters;
+var includesNumbers;
  //function passwordGenerator(num) {
  //var password = '';
  //for (var i = 0; i < num; i++) {
@@ -36,8 +38,18 @@
      alert(" Invalid, must be between 8-128 Characters");
    }
    //var password = ""
-
-   var finalArray = [...numbersArray, ...specialcharactersArray, ...uppercaseArray, ...lowercaseArray]
+if(includesLowerCase === true ){
+  var finalArray = [...lowercaseArray]
+}
+if(includesNumbers === true){
+  finalArray = [finalArray, ...numbersArray]
+}
+if(includesSpecialCharacters === true){
+  finalArray = [finalArray, ...specialcharactersArray]
+}
+if(includesUpperCase === true){
+  finalArray = [finalArray, ...uppercaseArray]
+}
    //finalArray = finalArray.split("")
    console.log(finalArray)
    for (let index = 0; index < length; index++) {
@@ -75,46 +87,46 @@
  //generate button criteria 
  var generate = document.getElementById("start");
  generate.onclick = function () {
-   console.log("click works");
+  
    document.getElememtById("selectPopup").style.visibility = ("visible"); //added parentheses
  }
 
  //Password Criteria that is submitted by the user is read.
  var g2 = document.getElementById("start");
  g2.onclick = function () {
-   console.log("generate button works");
+  
    //let passCharacters =[ ];
 
 
    // includes lowercase
    if (document.getElementById("lower").checked) {
-     console.log("user wants lowercase letters");
-     finalCharacters.push("");
+    
+     includesLowerCase = true
    }
 
    //includes uppercase letters 
    if (document.getElementById("upper").checked) {
-     console.log("user wants upperscase letters");
-     finalCharacters.push("");
+   
+     includesUpperCase = true 
    }
 
    //includes special characters
    if (document.getElementById("special").checked) {
-     console.log("user wants special characters");
-     finalCharacters.push("");
+     
+     includesSpecialCharacters = true 
    }
 
    //includes numbers
    if (document.getElementById("numbers").checked) {
-     console.log("user wants numeric characters");
-     finalCharacters.push("");
+
+     includesNumbers = true 
    }
    //finalCharacters.push("a");
    //finalCharacters.push("8");
    //console.log(passCharacters)
    //console.log(finalCharacters);
    //console.log(generatePassword);
-   console.log(password);
+  
    //return password
    //for every character set selected add 1 item from that set immediately to the password and push the entire set to the array.
    //for loop added
